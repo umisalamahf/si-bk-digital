@@ -50,7 +50,7 @@
         .account-caption { margin-top: .1rem; color: #6d6268; font-size: .72rem; }
         .logout-button { width: 100%; border: 1px solid #f0dce3; border-radius: .75rem; background: #fff8fa; padding: .6rem .8rem; color: #72364d; font-size: .82rem; font-weight: 650; text-align: left; }
         .logout-button:hover { background: #fce9ef; }
-        .app-content { min-height: 100vh; margin-left: var(--sidebar-width); }
+        .app-content { min-height: 100vh; min-width: 0; margin-left: var(--sidebar-width); }
         .mobile-bar { display: none; }
         .sidebar-overlay { display: none; }
         @media (max-width: 767px) {
@@ -61,6 +61,11 @@
             .app-content { margin-left: 0; }
             .mobile-bar { position: sticky; top: 0; z-index: 30; display: flex; min-height: 3.75rem; align-items: center; gap: .75rem; border-bottom: 1px solid var(--pink-border); background: rgba(255,255,255,.96); padding: .65rem 1rem; backdrop-filter: blur(10px); }
             .mobile-menu-button { display: grid; width: 2.45rem; height: 2.45rem; place-items: center; border: 1px solid #f0dce3; border-radius: .75rem; background: #fff8fa; color: #542d3d; }
+            .app-content main { min-width: 0; padding: 1rem; }
+            .app-content main table { display: block; width: 100%; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+            .app-content main :where(input, select, textarea) { max-width: 100%; font-size: 16px; }
+            .app-content main :where(form, section, article) { min-width: 0; }
+            .app-content main :where(h1, h2, h3) { overflow-wrap: anywhere; }
         }
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
